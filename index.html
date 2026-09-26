@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Khushali Jaiswal — Fashion & Graphic Designer portfolio.">
+<title>Khushali Jaiswal — Fashion & Graphic Designer</title>
+<style>
+:root {
+  --ink:#24191e; --muted:#66565b; --paper:#f8f1eb; --paper2:#eee1db;
+  --rose:#d9c1bd; --olive:#a6a477; --gold:#c58f22; --teal:#5d9e9a;
+  --line:rgba(36,25,30,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.nav{position:fixed;z-index:20;top:18px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 32px));display:flex;align-items:center;justify-content:space-between;padding:13px 18px;background:rgba(248,241,235,.86);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px}
+.logo{font-family:Georgia,serif;font-size:18px;font-weight:700;letter-spacing:.02em}
+.navlinks{display:flex;gap:22px;font-size:13px;color:var(--muted)}
+.navlinks a:hover{color:var(--ink)}
+.hero{min-height:100vh;display:grid;place-items:center;padding:120px 6vw 80px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(.2px);opacity:.7;z-index:-1}
+.hero:before{width:420px;height:420px;background:var(--rose);left:-130px;top:15%}
+.hero:after{width:520px;height:520px;background:#d7c9ad;right:-180px;bottom:-180px}
+.hero-inner{width:min(1180px,100%);display:grid;grid-template-columns:1.05fr .95fr;gap:7vw;align-items:center}
+.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(62px,9vw,142px);line-height:.86;letter-spacing:-.065em;margin:0 0 28px;font-weight:500}
+.hero-copy{max-width:590px;color:var(--muted);font-size:17px}
+.cta{display:inline-flex;gap:10px;align-items:center;margin-top:30px;padding:13px 19px;border:1px solid var(--ink);border-radius:999px;font-size:13px;background:var(--ink);color:var(--paper)}
+.cta.secondary{background:transparent;color:var(--ink);margin-left:8px}
+.hero-art{position:relative;min-height:560px;display:grid;place-items:center}
+.blob{position:absolute;width:430px;height:520px;background:var(--paper2);border-radius:48% 52% 40% 60% / 58% 45% 55% 42%;transform:rotate(-8deg)}
+.hero-img{position:relative;width:min(410px,78%);border-radius:210px 210px 30px 30px;box-shadow:0 28px 70px rgba(36,25,30,.12)}
+.note{position:absolute;right:0;bottom:35px;background:var(--ink);color:white;padding:18px 20px;border-radius:16px;max-width:190px;font-family:Georgia,serif;font-size:15px;transform:rotate(4deg)}
+.section{padding:115px 6vw}
+.container{width:min(1180px,100%);margin:auto}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+h2{font-family:Georgia,serif;font-size:clamp(44px,6vw,82px);line-height:.95;font-weight:500;letter-spacing:-.05em;margin:8px 0 0}
+.intro-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:8vw;align-items:start}
+.about-copy{font-family:Georgia,serif;font-size:clamp(25px,3vw,43px);line-height:1.18}
+.about-small{color:var(--muted);font-size:15px;max-width:560px}
+.about-fusion{grid-template-columns:.75fr 1.25fr;gap:7vw;align-items:start}
+.about-portrait-wrap{position:sticky;top:105px}
+.about-portrait{width:100%;max-width:390px;display:block;aspect-ratio:782/908;object-fit:cover;border-radius:24px;box-shadow:0 24px 60px rgba(36,25,30,.12)}
+.portrait-caption{font-family:Georgia,serif;font-size:20px;margin-top:14px;line-height:1.2}
+.portrait-caption span{font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.about-content .about-copy{margin-top:0}
+.about-content .about-small{margin:22px 0 0}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.stat{padding:20px;border-top:1px solid var(--line)}
+.stat strong{font-family:Georgia,serif;font-size:38px;font-weight:500}
+.stat span{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.project-nav{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
+.filter{border:1px solid var(--line);background:transparent;padding:9px 14px;border-radius:999px;color:var(--muted);cursor:pointer;font:inherit;font-size:12px}
+.filter.active,.filter:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.featured-cover{grid-column:1/-1;position:relative;margin-bottom:26px;overflow:hidden;background:#e9dfd7;border-radius:4px;cursor:pointer}
+.featured-cover img{display:block;width:100%;height:auto}
+.featured-cover-label{position:absolute;left:24px;bottom:24px;background:rgba(248,241,235,.94);padding:12px 16px;display:flex;flex-direction:column;gap:2px}
+.featured-cover-label span{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.featured-cover-label strong{font-family:Georgia,serif;font-size:24px;font-weight:500}
+
+.work-card{grid-column:span 4;cursor:pointer}
+.work-card:nth-child(3n+2){transform:translateY(48px)}
+.work-image{overflow:hidden;background:#e9dfd7;border-radius:4px}
+.work-image img{display:block;width:100%;height:auto;object-fit:contain;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.work-card:hover .work-image img{transform:scale(1.025)}
+.work-meta{padding:14px 2px 10px}
+.work-meta span{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.work-meta h3{font-family:Georgia,serif;font-size:25px;font-weight:500;margin:4px 0 4px}
+.work-meta p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.band{background:var(--ink);color:var(--paper)}
+.band .eyebrow,.band .about-small{color:#cbbdc0}
+.project-story{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.story-card{padding:34px;border:1px solid rgba(248,241,235,.18);min-height:310px}
+.story-card h3{font-family:Georgia,serif;font-size:42px;font-weight:500;margin:0 0 12px}
+.story-card p{color:#cbbdc0;max-width:520px}
+.contact{background:var(--paper2)}
+.contact-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:8vw;align-items:end}
+.contact-title{font-family:Georgia,serif;font-size:clamp(58px,8vw,110px);line-height:.9;letter-spacing:-.06em}
+.contact-info{font-size:15px;color:var(--muted)}
+.contact-info a{text-decoration:underline;text-underline-offset:4px}
+footer{padding:28px 6vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+.lightbox{position:fixed;inset:0;background:rgba(15,10,12,.92);display:none;z-index:50;align-items:center;justify-content:center;padding:30px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(92vw,1200px);max-height:88vh;object-fit:contain}
+.lightbox button{position:absolute;top:18px;right:22px;border:0;background:transparent;color:white;font-size:35px;cursor:pointer}
+.lightbox-title{position:absolute;left:25px;bottom:20px;color:white;font-family:Georgia,serif;font-size:18px}
+@media(max-width:850px){
+ .navlinks{display:none} .hero-inner,.intro-grid,.project-story,.contact-inner{grid-template-columns:1fr}
+ .about-fusion{grid-template-columns:1fr;gap:35px}.about-portrait-wrap{position:static}.about-portrait{max-width:340px}
+ .hero{padding-top:110px} .hero-art{min-height:430px} .hero-img{width:290px}
+ .work-card{grid-column:span 6} .work-card:nth-child(3n+2){transform:none} .work-card:nth-child(4n+1){transform:translateY(25px)}
+ .section{padding:80px 5vw} .stats{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ h1{font-size:66px} .work-card{grid-column:span 12} .work-card:nth-child(4n+1){transform:none}
+ .cta.secondary{margin-left:0;margin-top:10px} .hero-art{min-height:380px}
+}
+</style>
+
+<style>
+.nift-context{grid-column:1/-1;margin:1.5rem 0 .5rem;padding:1.6rem 0;border-top:1px solid rgba(40,35,30,.18);border-bottom:1px solid rgba(40,35,30,.12)}
+.nift-context .eyebrow{margin-bottom:.5rem}
+.nift-context h3{font-size:clamp(1.6rem,3vw,2.5rem);font-weight:500;margin:0 0 .35rem}
+.nift-context p{max-width:780px;line-height:1.65;margin:.35rem 0;opacity:.76}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="#top">KJ</a>
+  <div class="navlinks">
+    <a href="#about">About</a><a href="#work">Work</a><a href="#fashion">Fashion</a><a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Fashion · Graphic Design · Visual Storytelling</div>
+      <h1>Khushali<br>Jaiswal</h1>
+      <p class="hero-copy">Creative Fashion &amp; Graphic Designer with a passion for aesthetics, storytelling, and innovative design. Constantly exploring new ideas to create distinctive visual experiences.</p>
+      <a class="cta" href="#work">Explore the work ↓</a>
+      <a class="cta secondary" href="#contact">Let's connect</a>
+    </div>
+    <div class="hero-art">
+      <div class="blob"></div>
+      <img class="hero-img" src="assets/khushali-black-coat.png" alt="Khushali Jaiswal">
+      <div class="note">Curating elegance, form &amp; visual stories.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+ <div class="container">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">01 — About</div>
+      <h2>Design with<br>character.</h2>
+    </div>
+  </div>
+  <div class="intro-grid about-fusion">
+    <div class="about-portrait-wrap">
+      <img class="about-portrait" src="assets/khushali-black-coat.png" alt="Khushali Jaiswal">
+      <div class="portrait-caption">Khushali Jaiswal<br><span>Fashion &amp; Graphic Designer</span></div>
+    </div>
+    <div class="about-content">
+      <p class="about-copy">A fashion &amp; graphic designer and curator of elegance, form, and visual storytelling, Khushali brings technical skill and creativity together to create distinctive, trend-aware visual experiences.</p>
+      <p class="about-small">Driven by curiosity and a constant desire to explore, she enjoys pushing beyond familiar boundaries and taking on new challenges that expand both her skills and perspective.</p>
+      <p class="about-small">Her design philosophy is rooted in the belief that fashion is a powerful medium for individuals to articulate their distinct identities and lifestyles through what they wear. That principle informs her approach across fashion, graphic design, illustration, branding, publication and visual communication.</p>
+      <p class="about-small">She is passionate about personal and professional growth, and about creating work that feels considered, expressive and memorable.</p>
+      <div class="stats">
+        <div class="stat"><strong>150+</strong><span>Traditional paintings digitalized</span></div>
+        <div class="stat"><strong>Fashion</strong><span>Concept, illustration &amp; collection development</span></div>
+        <div class="stat"><strong>Graphic</strong><span>Branding, print &amp; visual communication</span></div>
+      </div>
+    </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="work">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">02 — Selected Work</div><h2>Visual<br>stories.</h2></div><div class="about-small">A selection across branding, cultural design, fashion concepts, print and freelance work.</div></div>
+  <div class="project-nav">
+    <button class="filter active" data-filter="all">All</button>
+    <button class="filter" data-filter="branding">Branding</button>
+    <button class="filter" data-filter="fashion">Fashion</button>
+    <button class="filter" data-filter="cultural">Cultural</button>
+    <button class="filter" data-filter="nift">NIFT Delhi</button>
+    <button class="filter" data-filter="print">Print</button>
+    <button class="filter" data-filter="freelance">Freelance</button>
+  </div>
+  <div class="work-grid" id="workGrid">
+  <div class="featured-cover" onclick="openLightbox('assets/graphic-01.jpg', 'Graphic Design — Khushali Jaiswal')">
+    <img src="assets/graphic-01.jpg" alt="Graphic Design portfolio cover — Khushali Jaiswal">
+    <div class="featured-cover-label">
+      <span>Graphic Design</span>
+      <strong>Portfolio Cover</strong>
+    </div>
+  </div>
+    
+      <article class="work-card" data-category="branding · packaging · menu design" onclick="openLightbox('assets/graphic-04.jpg', 'Batata Bros Cafe')">
+        <div class="work-image"><img src="assets/graphic-04.jpg" alt="Batata Bros Cafe" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Branding · Packaging · Menu Design</span>
+          <h3>Batata Bros Cafe</h3>
+          <p>A contemporary Vada Pav café identity bringing together bold flavours, local culture and a fresh visual system.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="brand identity" onclick="openLightbox('assets/graphic-05.jpg', 'Batata Bros — Brand Applications')">
+        <div class="work-image"><img src="assets/graphic-05.jpg" alt="Batata Bros — Brand Applications" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Brand Identity</span>
+          <h3>Batata Bros — Brand Applications</h3>
+          <p>Identity translated across packaging, tote bags, cups, storefront touchpoints and promotional material.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="print design" onclick="openLightbox('assets/graphic-06.jpg', 'Batata Bros — Menu System')">
+        <div class="work-image"><img src="assets/graphic-06.jpg" alt="Batata Bros — Menu System" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Print Design</span>
+          <h3>Batata Bros — Menu System</h3>
+          <p>A warm, illustrated menu system designed to extend the café&#x27;s visual language into print.</p>
+        </div>
+      </article>
+    
+      <div class="nift-context"><div class="eyebrow">NIFT DELHI</div><h3>Vajjika Painting Revival</h3><p>Graphic &amp; Publication Design · Cultural Preservation</p><p>A NIFT Delhi project focused on reviving, documenting and digitally transforming Vajjika Painting through visual communication, print collateral and digital products.</p></div>
+      <article class="work-card" data-category="nift cultural design · publication" onclick="openLightbox('assets/graphic-08.jpg', 'Vajjika Painting Revival')">
+        <div class="work-image"><img src="assets/graphic-08.jpg" alt="Vajjika Painting Revival" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Cultural Design · Publication</span>
+          <h3>Vajjika Painting Revival</h3>
+          <p>Visual communication for the revival and documentation of Vajjika Painting, including posters, standees, certificates and booklets.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="nift illustration · surface design" onclick="openLightbox('assets/graphic-09.jpg', 'Vajjika — Digital Products')">
+        <div class="work-image"><img src="assets/graphic-09.jpg" alt="Vajjika — Digital Products" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Illustration · Surface Design</span>
+          <h3>Vajjika — Digital Products</h3>
+          <p>Contemporary digital products inspired by Vajjika Painting, translating traditional motifs into fashion and objects.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="nift digital art · heritage" onclick="openLightbox('assets/graphic-10.jpg', 'Vajjika — Digital Paintings')">
+        <div class="work-image"><img src="assets/graphic-10.jpg" alt="Vajjika — Digital Paintings" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Digital Art · Heritage</span>
+          <h3>Vajjika — Digital Paintings</h3>
+          <p>Selected digital interpretations of traditional Vajjika paintings.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="fashion concept · visual research" onclick="openLightbox('assets/fashion-04.jpg', 'Post-Impressionism')">
+        <div class="work-image"><img src="assets/fashion-04.jpg" alt="Post-Impressionism" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Fashion Concept · Visual Research</span>
+          <h3>Post-Impressionism</h3>
+          <p>A visual exploration of Post-Impressionism as the starting point for a fashion narrative.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="concept development" onclick="openLightbox('assets/fashion-06.jpg', 'Van Gogh — Rebirth of the Legend')">
+        <div class="work-image"><img src="assets/fashion-06.jpg" alt="Van Gogh — Rebirth of the Legend" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Concept Development</span>
+          <h3>Van Gogh — Rebirth of the Legend</h3>
+          <p>A fashion concept blending Van Gogh&#x27;s visual language with contemporary silhouettes.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="fashion illustration" onclick="openLightbox('assets/fashion-09.jpg', 'Van Gogh — Range Plan')">
+        <div class="work-image"><img src="assets/fashion-09.jpg" alt="Van Gogh — Range Plan" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Fashion Illustration</span>
+          <h3>Van Gogh — Range Plan</h3>
+          <p>A range of looks developed from the project&#x27;s visual direction.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="technical design" onclick="openLightbox('assets/fashion-10.jpg', 'Garment Worksheet')">
+        <div class="work-image"><img src="assets/fashion-10.jpg" alt="Garment Worksheet" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Technical Design</span>
+          <h3>Garment Worksheet</h3>
+          <p>A garment specification sheet covering fabric, materials, measurements, construction and colour.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="fashion concept · research" onclick="openLightbox('assets/fashion-14.jpg', 'Thalassa')">
+        <div class="work-image"><img src="assets/fashion-14.jpg" alt="Thalassa" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Fashion Concept · Research</span>
+          <h3>Thalassa</h3>
+          <p>An underwater-inspired fashion direction built around marine forms, colour and texture.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="fashion illustration" onclick="openLightbox('assets/fashion-17.jpg', 'Thalassa — Range')">
+        <div class="work-image"><img src="assets/fashion-17.jpg" alt="Thalassa — Range" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Fashion Illustration</span>
+          <h3>Thalassa — Range</h3>
+          <p>A developed collection of silhouettes emerging from the Thalassa concept.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="fashion concept · luxury" onclick="openLightbox('assets/fashion-18.jpg', 'Gilt')">
+        <div class="work-image"><img src="assets/fashion-18.jpg" alt="Gilt" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Fashion Concept · Luxury</span>
+          <h3>Gilt</h3>
+          <p>A luxury-focused direction exploring metallic surfaces, ornamentation and evening dressing.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="moodboard · styling" onclick="openLightbox('assets/fashion-21.jpg', 'Gilt — Visual Story')">
+        <div class="work-image"><img src="assets/fashion-21.jpg" alt="Gilt — Visual Story" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Moodboard · Styling</span>
+          <h3>Gilt — Visual Story</h3>
+          <p>Material, styling and colour references developed around the Gilt concept.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="fashion concept" onclick="openLightbox('assets/fashion-23.jpg', 'Edgy Elegance')">
+        <div class="work-image"><img src="assets/fashion-23.jpg" alt="Edgy Elegance" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Fashion Concept</span>
+          <h3>Edgy Elegance</h3>
+          <p>A monochrome fashion direction balancing sharp silhouettes, texture and embellished details.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="surface pattern · textile" onclick="openLightbox('assets/fashion-27.jpg', 'Print Development')">
+        <div class="work-image"><img src="assets/fashion-27.jpg" alt="Print Development" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Surface Pattern · Textile</span>
+          <h3>Print Development</h3>
+          <p>Selected textile print explorations developed for apparel applications.</p>
+        </div>
+      </article>
+    
+
+    
+      <article class="work-card" data-category="event · print · visual communication" onclick="openLightbox('assets/fashion-37.jpg', 'Freelance Graphic Works')">
+        <div class="work-image"><img src="assets/fashion-37.jpg" alt="Freelance Graphic Works" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Event · Print · Visual Communication</span>
+          <h3>Freelance Graphic Works</h3>
+          <p>Wedding standees and personalized event graphics developed for different clients and audiences.</p>
+        </div>
+      </article>
+    
+      <article class="work-card" data-category="art gallery · print design" onclick="openLightbox('assets/fashion-38.jpg', 'Akar Prakar Gallery')">
+        <div class="work-image"><img src="assets/fashion-38.jpg" alt="Akar Prakar Gallery" loading="lazy"></div>
+        <div class="work-meta">
+          <span>Art Gallery · Print Design</span>
+          <h3>Akar Prakar Gallery</h3>
+          <p>Postcard and promotional material designed for an art-gallery context.</p>
+        </div>
+      </article>
+    
+  </div>
+ </div>
+</section>
+
+<section class="section band" id="fashion">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">03 — Fashion Practice</div><h2>From concept<br>to collection.</h2></div></div>
+  <div class="project-story">
+    <div class="story-card"><div class="eyebrow">Post-Impressionism</div><h3>Rebirth of the Legend</h3><p>Van Gogh-inspired research translated into contemporary fashion through moodboards, techniques, range planning, garment development and final looks.</p></div>
+    <div class="story-card"><div class="eyebrow">Collections</div><h3>Thalassa · Gilt · Edgy Elegance</h3><p>Distinct visual worlds exploring marine forms, luxury metallics, monochrome drama, embellishment and silhouette development.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section contact" id="contact">
+ <div class="container contact-inner">
+   <div><div class="eyebrow">04 — Contact</div><div class="contact-title">Let's<br>work<br>together.</div></div>
+   <div class="contact-info">
+     <p><strong>Khushali Jaiswal</strong><br>Fashion &amp; Graphic Designer</p>
+     <p><a href="mailto:khushalijaiswal2000@gmail.com">khushalijaiswal2000@gmail.com</a></p>
+     <p><a href="tel:+919113766757">+91 91137 66757</a></p>
+   </div>
+ </div>
+</section>
+</main>
+
+<footer><span>© Khushali Jaiswal</span><span>Fashion · Graphic Design · Visual Storytelling</span></footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+ <button aria-label="Close" onclick="closeLightbox()">×</button>
+ <img id="lightboxImg" src="" alt="">
+ <div class="lightbox-title" id="lightboxTitle"></div>
+</div>
+
+<script>
+function openLightbox(src,title){
+ const lb=document.getElementById('lightbox');
+ document.getElementById('lightboxImg').src=src;
+ document.getElementById('lightboxTitle').textContent=title;
+ lb.classList.add('open');
+}
+function closeLightbox(e){
+ if(e && e.target && e.target.tagName==='IMG') return;
+ document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeLightbox();});
+const filters=document.querySelectorAll('.filter');
+const cards=document.querySelectorAll('.work-card');
+filters.forEach(btn=>btn.addEventListener('click',()=>{
+ filters.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+ const f=btn.dataset.filter;
+ cards.forEach(c=>{
+   const text=c.dataset.category;
+   let show=f==='all';
+   if(f==='branding') show=text.includes('branding');
+   if(f==='fashion') show=text.includes('fashion');
+   if(f==='cultural') show=text.includes('cultural') || text.includes('heritage');
+   if(f==='nift') show=text.includes('nift');
+   if(f==='print') show=text.includes('print') || text.includes('publication');
+   if(f==='freelance') show=text.includes('freelance') || text.includes('event');
+   c.style.display=show?'block':'none';
+ });
+});
+</script>
+</body>
+</html>
